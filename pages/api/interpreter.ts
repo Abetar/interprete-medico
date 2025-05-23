@@ -52,9 +52,14 @@ ${content}
 
         const responseText = chat.choices[0]?.message?.content || '';
         return res.status(200).json({ result: responseText });
-    } catch (error: any) {
-        console.error('Error de OpenAI:', error);
-        console.error('Error al llamar a OpenAI:', error.message || error);
-        return res.status(500).json({ error: 'Error al procesar con IA' });
+
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error('Error de OpenAI:', error.message);
+            return res.status(500).json({ error: 'Error al procesar con OpenAI' });
+        } else {
+            console.error('Error inesperado:', error);
+            return res.status(500).json({ error: 'Error inesperado del servidor' });
+        }
     }
 }
