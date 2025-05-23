@@ -1,24 +1,74 @@
+/* Tailwind base layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Tema claro */
+/* Tema claro (forzado) */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937;
+  /* text-gray-800 */
 }
 
-/* Tema oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Aplicar colores al body */
+/* Aplicar variables al body */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Refinamientos tipográficos */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  color: #111827;
+  /* text-gray-900 */
+}
+
+a {
+  color: #2563eb;
+  /* blue-600 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Mejores formularios por defecto */
+input[type="file"] {
+  border: none;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn-rounded {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-rounded:hover {
+  background-color: #1a1a1a;
 }
