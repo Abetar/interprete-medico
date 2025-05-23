@@ -53,7 +53,7 @@ export default function UploadImage() {
         }
 
         try {
-            const res = await fetch('/interprete-medico/api/interpreter', {
+            const res = await fetch('/api/interpreter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ content: fullText }),
@@ -101,7 +101,7 @@ export default function UploadImage() {
             setResult('');
             // setOcrText('');
         }
-        
+
     };
 
 
