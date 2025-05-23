@@ -7,7 +7,7 @@ import InterpretationResult from './InterpretationResult';
 export default function UploadImage() {
     const [images, setImages] = useState<File[]>([]);
     const [previews, setPreviews] = useState<string[]>([]);
-    const [ocrText, setOcrText] = useState('');
+    // const [ocrText, setOcrText] = useState('');
     const [result, setResult] = useState('');
     const [loading, setLoading] = useState(false);
     const [imageCount, setImageCount] = useState(0);
@@ -99,7 +99,7 @@ export default function UploadImage() {
         // 🧠 Limpiar resultado si ya no hay imágenes (o se eliminó la que generó el resultado)
         if (updatedImages.length === 0) {
             setResult('');
-            setOcrText('');
+            // setOcrText('');
         }
         
     };
